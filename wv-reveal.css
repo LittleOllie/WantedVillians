@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -1354,6 +1358,32 @@
         font-size: clamp(1.15rem, 4.5vmin, 1.85rem);
         padding: 14px 28px;
     }
+
+    .wv-gallery {
+        justify-content: flex-start;
+        padding-top: max(92px, calc(env(safe-area-inset-top, 0px) + 76px));
+        padding-bottom: 20px;
+        gap: 10px;
+    }
+
+    .wv-gallery-header {
+        margin-top: 16px;
+        margin-bottom: 4px;
+        padding-top: 4px;
+    }
+
+    .wv-gallery-burn-text {
+        font-size: clamp(1.15rem, 4vmin, 1.75rem);
+        line-height: 1.28;
+    }
+
+    .wv-gallery-close {
+        z-index: 10;
+        top: max(14px, env(safe-area-inset-top, 0px));
+        right: 12px;
+        padding: 8px 14px;
+        font-size: clamp(0.85rem, 2.6vmin, 1.1rem);
+    }
 }
 
 @media (max-width: 390px) and (orientation: portrait) {
@@ -1368,6 +1398,18 @@
 
     .wv-title-suffix {
         left: 60%;
+    }
+
+    .wv-gallery {
+        padding-top: max(96px, calc(env(safe-area-inset-top, 0px) + 80px));
+    }
+
+    .wv-gallery-header {
+        margin-top: 20px;
+    }
+
+    .wv-gallery-burn-text {
+        font-size: clamp(1.05rem, 3.8vmin, 1.55rem);
     }
 }
 
@@ -1595,6 +1637,7 @@
 .wv-hub-nav .wv-hub-link:nth-child(3) { animation-delay: 0.24s; }
 .wv-hub-nav .wv-hub-link:nth-child(4) { animation-delay: 0.32s; }
 .wv-hub-nav .wv-hub-link:nth-child(5) { animation-delay: 0.4s; }
+.wv-hub-nav .wv-hub-link:nth-child(6) { animation-delay: 0.48s; }
 
 .wv-hub-link:hover {
     transform: translateY(-2px) rotate(-1deg);
@@ -1716,5 +1759,37 @@
 @media (prefers-reduced-motion: reduce) {
     .wv-hub-link {
         animation: none;
+    }
+}
+
+.wv-powered-by {
+    position: fixed;
+    bottom: max(10px, env(safe-area-inset-bottom, 0px));
+    left: 0;
+    right: 0;
+    z-index: 35;
+    margin: 0;
+    padding: 0 16px 4px;
+    text-align: center;
+    font-family: 'Baloo 2', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    font-size: 1.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.42);
+    pointer-events: none;
+}
+
+.wv-hub-page .wv-hub-scene {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+    .wv-powered-by {
+        font-size: 1.72rem;
+    }
+
+    .wv-reveal-page:not(.wv-hub-page):not(.wv-characters-page) .wv-powered-by {
+        bottom: max(8px, env(safe-area-inset-bottom, 0px));
     }
 }
