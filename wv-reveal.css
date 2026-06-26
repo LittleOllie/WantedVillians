@@ -1326,6 +1326,51 @@
     text-align: center;
 }
 
+/* iPhone / narrow portrait — keep W, V + title text inside the screen */
+@media (max-width: 480px) and (orientation: portrait) {
+    .wv-letters {
+        transform: scale(0.86);
+        transform-origin: 48% 44%;
+    }
+
+    .wv-title-rest {
+        font-size: clamp(1.1rem, 11vmin, 4.25rem);
+    }
+
+    .wv-title-mid {
+        left: 55.5%;
+    }
+
+    .wv-title-suffix {
+        left: 61.5%;
+        font-size: clamp(1rem, 10vmin, 3.85rem);
+    }
+
+    .wv-do-not-press-wrap {
+        bottom: max(4.5%, env(safe-area-inset-bottom, 0px));
+    }
+
+    .wv-do-not-press {
+        font-size: clamp(1.15rem, 4.5vmin, 1.85rem);
+        padding: 14px 28px;
+    }
+}
+
+@media (max-width: 390px) and (orientation: portrait) {
+    .wv-letters {
+        transform: scale(0.78);
+        transform-origin: 47% 44%;
+    }
+
+    .wv-title-mid {
+        left: 54.5%;
+    }
+
+    .wv-title-suffix {
+        left: 60%;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .wv-v-wrap,
     .wv-w-wrap {
